@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://vae7fuayumti"]
+
+[ext_resource type="Script" uid="uid://3vgnfkimbqxn" path="res://Inventory/inventory_item.gd" id="1_vonyw"]
+[ext_resource type="Texture2D" uid="uid://dhpotcydjrtuf" path="res://Assets/Enemies and NPC/Grotto-escape-2-snake/sprites/idle/_0000_Layer-1.png" id="2_5tmkh"]
+
+[resource]
+script = ExtResource("1_vonyw")
+name = "snake"
+texture = ExtResource("2_5tmkh")
+health = 0
+attack = 0
+defense = 0
+speed = 0
+type = Array[int]([])
+metadata/_custom_type_script = "uid://3vgnfkimbqxn"

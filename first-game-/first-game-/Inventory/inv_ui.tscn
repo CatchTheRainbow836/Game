@@ -1,0 +1,153 @@
+[gd_scene load_steps=4 format=3 uid="uid://u0xxg0d3v31o"]
+
+[ext_resource type="Script" uid="uid://cbu1ssbgas7bv" path="res://Inventory/Inv_ui.gd" id="1_ltxgc"]
+[ext_resource type="Texture2D" uid="uid://djq71m4pi71co" path="res://Inventory/inventory-background.png" id="2_s8fnp"]
+[ext_resource type="Script" uid="uid://bahvui3tuexwf" path="res://SlotButton.gd" id="3_s8fnp"]
+
+[node name="Inv_UI" type="Control"]
+custom_minimum_size = Vector2(84, 62)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 84.0
+offset_bottom = 62.0
+script = ExtResource("1_ltxgc")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_s8fnp")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="GridContainer" type="GridContainer" parent="NinePatchRect"]
+clip_children = 2
+clip_contents = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -34.0
+offset_top = -25.0
+offset_right = 34.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 4
+theme_override_constants/v_separation = 4
+columns = 4
+
+[node name="TextureButton1" type="TextureButton" parent="NinePatchRect/GridContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(14, 14)
+layout_mode = 2
+ignore_texture_size = true
+stretch_mode = 4
+script = ExtResource("3_s8fnp")
+
+[node name="TextureButton2" type="TextureButton" parent="NinePatchRect/GridContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(14, 14)
+layout_mode = 2
+ignore_texture_size = true
+stretch_mode = 4
+script = ExtResource("3_s8fnp")
+slot_index = 1
+
+[node name="TextureButton3" type="TextureButton" parent="NinePatchRect/GridContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(14, 14)
+layout_mode = 2
+ignore_texture_size = true
+stretch_mode = 4
+script = ExtResource("3_s8fnp")
+slot_index = 2
+
+[node name="TextureButton4" type="TextureButton" parent="NinePatchRect/GridContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(14, 14)
+layout_mode = 2
+ignore_texture_size = true
+stretch_mode = 4
+script = ExtResource("3_s8fnp")
+slot_index = 3
+
+[node name="TextureButton5" type="TextureButton" parent="NinePatchRect/GridContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(14, 14)
+layout_mode = 2
+ignore_texture_size = true
+stretch_mode = 4
+script = ExtResource("3_s8fnp")
+slot_index = 4
+
+[node name="TextureButton6" type="TextureButton" parent="NinePatchRect/GridContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(14, 14)
+layout_mode = 2
+ignore_texture_size = true
+stretch_mode = 4
+script = ExtResource("3_s8fnp")
+slot_index = 5
+
+[node name="TextureButton7" type="TextureButton" parent="NinePatchRect/GridContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(14, 14)
+layout_mode = 2
+ignore_texture_size = true
+stretch_mode = 4
+script = ExtResource("3_s8fnp")
+slot_index = 6
+
+[node name="TextureButton8" type="TextureButton" parent="NinePatchRect/GridContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(14, 14)
+layout_mode = 2
+ignore_texture_size = true
+stretch_mode = 4
+script = ExtResource("3_s8fnp")
+slot_index = 7
+
+[node name="TextureButton9" type="TextureButton" parent="NinePatchRect/GridContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(14, 14)
+layout_mode = 2
+ignore_texture_size = true
+stretch_mode = 4
+script = ExtResource("3_s8fnp")
+slot_index = 8
+
+[node name="TextureButton10" type="TextureButton" parent="NinePatchRect/GridContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(14, 14)
+layout_mode = 2
+ignore_texture_size = true
+stretch_mode = 4
+script = ExtResource("3_s8fnp")
+slot_index = 9
+
+[node name="TextureButton11" type="TextureButton" parent="NinePatchRect/GridContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(14, 14)
+layout_mode = 2
+ignore_texture_size = true
+stretch_mode = 4
+script = ExtResource("3_s8fnp")
+slot_index = 10
+
+[node name="TextureButton12" type="TextureButton" parent="NinePatchRect/GridContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(14, 14)
+layout_mode = 2
+ignore_texture_size = true
+stretch_mode = 4
+script = ExtResource("3_s8fnp")
+slot_index = 11

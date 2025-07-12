@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://bh3cty5i0g7rv"]
+
+[ext_resource type="Script" uid="uid://3vgnfkimbqxn" path="res://Inventory/inventory_item.gd" id="1_x1dgj"]
+[ext_resource type="Texture2D" uid="uid://dd8nr3lyj4l74" path="res://Assets/Enemies and NPC/owl/Sprites/owl-1.png" id="2_t2ku3"]
+
+[resource]
+script = ExtResource("1_x1dgj")
+name = "owl"
+texture = ExtResource("2_t2ku3")
+health = 0
+attack = 0
+defense = 0
+speed = 0
+type = Array[int]([])
+metadata/_custom_type_script = "uid://3vgnfkimbqxn"

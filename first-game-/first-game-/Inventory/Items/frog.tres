@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://ccy3r3rgtj83i"]
+
+[ext_resource type="Script" uid="uid://3vgnfkimbqxn" path="res://Inventory/inventory_item.gd" id="1_j35f2"]
+[ext_resource type="Texture2D" uid="uid://c0tdcxdjffakl" path="res://Assets/Enemies and NPC/frog/Sprites/idle/frog-idle-1.png" id="2_x6pn5"]
+
+[resource]
+script = ExtResource("1_j35f2")
+name = "frog"
+texture = ExtResource("2_x6pn5")
+health = 0
+attack = 0
+defense = 0
+speed = 0
+type = Array[int]([])
+metadata/_custom_type_script = "uid://3vgnfkimbqxn"

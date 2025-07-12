@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://bwjx4p6tom6u5"]
+
+[ext_resource type="Script" uid="uid://3vgnfkimbqxn" path="res://Inventory/inventory_item.gd" id="1_5thai"]
+[ext_resource type="Texture2D" uid="uid://ntdk3ha3v8eh" path="res://Assets/Enemies and NPC/Slimer/Sprites/Slimer-Idle/slimer-idle1.png" id="2_7clgy"]
+
+[resource]
+script = ExtResource("1_5thai")
+name = "slimer"
+texture = ExtResource("2_7clgy")
+health = 0
+attack = 0
+defense = 0
+speed = 0
+type = Array[int]([])
+metadata/_custom_type_script = "uid://3vgnfkimbqxn"

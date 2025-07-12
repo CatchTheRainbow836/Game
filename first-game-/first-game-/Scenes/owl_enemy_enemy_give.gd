@@ -1,0 +1,9 @@
+extends BaseEnemy
+class_name Owl
+func _randomize_stats(ui: InvItem) -> void:
+	ui.health  = randi_range(350, 500)
+	ui.attack  = randi_range(60, 90)
+	ui.defense = randi_range(30, 50)
+	ui.speed   = randi_range(80, 110)
+	ui.type    = [8, 13]  # Flying / Normal
+	ui.moves = MovesFactory.get_moves("owl")

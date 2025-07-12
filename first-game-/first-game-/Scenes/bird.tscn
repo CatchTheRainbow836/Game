@@ -1,0 +1,148 @@
+[gd_scene load_steps=22 format=3 uid="uid://cbo8w32cn5cy3"]
+
+[ext_resource type="Script" uid="uid://bjm0cgaiohatu" path="res://Scripts/enemy.gd" id="1_mcegt"]
+[ext_resource type="Script" uid="uid://dcyb78scnkci2" path="res://Scenes/bird.gd" id="1_rr33m"]
+[ext_resource type="Script" uid="uid://bnk3skxprgjkj" path="res://Scenes/statslabel.gd" id="2_dnvpi"]
+[ext_resource type="Resource" uid="uid://cig3njb37mnly" path="res://Inventory/Items/bird.tres" id="2_xf4a6"]
+[ext_resource type="Texture2D" uid="uid://dps5fw36vhv75" path="res://Assets/Enemies and NPC/flying-bird/spritesheets/flying-creature-cycle-skin.png" id="4_pfwoh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_om1ab"]
+size = Vector2(31, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oc6qe"]
+atlas = ExtResource("4_pfwoh")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2gbwe"]
+atlas = ExtResource("4_pfwoh")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1xutp"]
+atlas = ExtResource("4_pfwoh")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n8o4c"]
+atlas = ExtResource("4_pfwoh")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_61cv0"]
+atlas = ExtResource("4_pfwoh")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o08xy"]
+atlas = ExtResource("4_pfwoh")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ktp83"]
+atlas = ExtResource("4_pfwoh")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7euia"]
+atlas = ExtResource("4_pfwoh")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gapgr"]
+atlas = ExtResource("4_pfwoh")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ca2jt"]
+atlas = ExtResource("4_pfwoh")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bvo7a"]
+atlas = ExtResource("4_pfwoh")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xi4n0"]
+atlas = ExtResource("4_pfwoh")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h6poc"]
+atlas = ExtResource("4_pfwoh")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rkjf6"]
+atlas = ExtResource("4_pfwoh")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3bk6w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oc6qe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2gbwe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1xutp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n8o4c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_61cv0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o08xy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ktp83")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7euia")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gapgr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ca2jt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bvo7a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xi4n0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h6poc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rkjf6")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(0, -16)
+script = ExtResource("1_rr33m")
+item = ExtResource("2_xf4a6")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, -16)
+script = ExtResource("1_mcegt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.5, 1.5)
+shape = SubResource("RectangleShape2D_om1ab")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -16)
+sprite_frames = SubResource("SpriteFrames_3bk6w")
+animation = &"run"
+frame_progress = 0.987002
+flip_h = true
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("2_dnvpi")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

@@ -1,0 +1,91 @@
+[gd_scene load_steps=15 format=3 uid="uid://7nuqwmvjgkuj"]
+
+[ext_resource type="Script" uid="uid://bpjpxdc4t2wlh" path="res://Scenes/grasshopper_enemy_enemy_give.gd" id="1_1361h"]
+[ext_resource type="Script" uid="uid://bjm0cgaiohatu" path="res://Scripts/enemy.gd" id="1_rk0oc"]
+[ext_resource type="Script" uid="uid://bnk3skxprgjkj" path="res://Scenes/statslabel.gd" id="2_8foyl"]
+[ext_resource type="Resource" uid="uid://dx0p8mli0wonc" path="res://Inventory/Items/grasshopper.tres" id="2_l42h1"]
+[ext_resource type="Texture2D" uid="uid://difvvr1rwsjtq" path="res://Assets/Enemies and NPC/grasshopper-idle/grasshopper-idle-sheet.png" id="4_mep0d"]
+[ext_resource type="Texture2D" uid="uid://bvumv77ot0pps" path="res://Assets/Enemies and NPC/grasshopper-jump/grasshopper-jump-sheet.png" id="5_eidky"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jao3i"]
+size = Vector2(50.5, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3gg22"]
+atlas = ExtResource("4_mep0d")
+region = Rect2(0, 0, 52, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kxloa"]
+atlas = ExtResource("4_mep0d")
+region = Rect2(52, 0, 52, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8j35d"]
+atlas = ExtResource("4_mep0d")
+region = Rect2(104, 0, 52, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_766kn"]
+atlas = ExtResource("4_mep0d")
+region = Rect2(156, 0, 52, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lu12t"]
+atlas = ExtResource("5_eidky")
+region = Rect2(52, 0, 52, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_of7ip"]
+atlas = ExtResource("5_eidky")
+region = Rect2(0, 0, 52, 45)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uqwaa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3gg22")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kxloa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8j35d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_766kn")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lu12t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_of7ip")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(0, -11)
+script = ExtResource("1_1361h")
+item = ExtResource("2_l42h1")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-1, -11)
+script = ExtResource("1_rk0oc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.75, -5)
+shape = SubResource("RectangleShape2D_jao3i")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -10)
+sprite_frames = SubResource("SpriteFrames_uqwaa")
+animation = &"idle"
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("2_8foyl")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

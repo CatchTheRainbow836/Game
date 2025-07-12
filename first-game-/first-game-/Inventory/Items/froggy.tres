@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://b2v2xyd3hhbny"]
+
+[ext_resource type="Script" uid="uid://3vgnfkimbqxn" path="res://Inventory/inventory_item.gd" id="1_kskff"]
+[ext_resource type="Texture2D" uid="uid://bfhywn2m70jev" path="res://Assets/Enemies and NPC/sunny-froggy/Sprites/walking/_0000_Layer-1.png" id="2_ijfx7"]
+
+[resource]
+script = ExtResource("1_kskff")
+name = "froggy"
+texture = ExtResource("2_ijfx7")
+health = 0
+attack = 0
+defense = 0
+speed = 0
+type = Array[int]([])
+metadata/_custom_type_script = "uid://3vgnfkimbqxn"

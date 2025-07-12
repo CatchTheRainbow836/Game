@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://c6cti3yu3jexx"]
+
+[ext_resource type="Script" uid="uid://3vgnfkimbqxn" path="res://Inventory/inventory_item.gd" id="1_oxl4a"]
+[ext_resource type="Texture2D" uid="uid://ldj8tybpt2ov" path="res://Assets/Enemies and NPC/sunny-mushroom/sprites/walking/0__0001_Layer-2.png" id="2_aco4a"]
+
+[resource]
+script = ExtResource("1_oxl4a")
+name = "mushroom"
+texture = ExtResource("2_aco4a")
+health = 0
+attack = 0
+defense = 0
+speed = 0
+type = Array[int]([])
+metadata/_custom_type_script = "uid://3vgnfkimbqxn"

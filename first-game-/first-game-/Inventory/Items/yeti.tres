@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://biomafsrlx6p2"]
+
+[ext_resource type="Script" uid="uid://3vgnfkimbqxn" path="res://Inventory/inventory_item.gd" id="1_7h04y"]
+[ext_resource type="Texture2D" uid="uid://pkmepef1kiy1" path="res://Assets/Enemies and NPC/yeti/Sprites/yeti-2.png" id="2_osebf"]
+
+[resource]
+script = ExtResource("1_7h04y")
+name = "yeti"
+texture = ExtResource("2_osebf")
+health = 0
+attack = 0
+defense = 0
+speed = 0
+type = Array[int]([])
+metadata/_custom_type_script = "uid://3vgnfkimbqxn"

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://bcj508ntf4ugu"]
+
+[ext_resource type="Script" uid="uid://3vgnfkimbqxn" path="res://Inventory/inventory_item.gd" id="1_cbk67"]
+[ext_resource type="Texture2D" uid="uid://cuw567vt7b0bo" path="res://Assets/Enemies and NPC/Grotto-escape-2-boss-dragon/sprites/idle/_0000_Layer-1.png" id="2_qev3l"]
+
+[resource]
+script = ExtResource("1_cbk67")
+name = "bossdragon"
+texture = ExtResource("2_qev3l")
+health = 0
+attack = 0
+defense = 0
+speed = 0
+type = Array[int]([])
+metadata/_custom_type_script = "uid://3vgnfkimbqxn"

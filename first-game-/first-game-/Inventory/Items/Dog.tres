@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://cfa2fru7bfqn4"]
+
+[ext_resource type="Script" uid="uid://3vgnfkimbqxn" path="res://Inventory/inventory_item.gd" id="1_8yev4"]
+
+[sub_resource type="Resource" id="Resource_m71ph"]
+metadata/__load_path__ = "res://first-game-backup2/Assets/dog4.png"
+
+[resource]
+script = ExtResource("1_8yev4")
+name = "Dog"
+texture = SubResource("Resource_m71ph")
+health = 875
+attack = 200
+defense = 35
+speed = 17
+type = Array[int]([13, 16])
+moves = []
+max_health = 0
+metadata/_custom_type_script = "uid://3vgnfkimbqxn"

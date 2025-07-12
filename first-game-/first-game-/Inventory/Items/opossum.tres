@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://drilxq8s54f7h"]
+
+[ext_resource type="Script" uid="uid://3vgnfkimbqxn" path="res://Inventory/inventory_item.gd" id="1_7ddwp"]
+[ext_resource type="Texture2D" uid="uid://dd0i0dxa6pbf3" path="res://Assets/Enemies and NPC/Opossum/opossum/opossum-1.png" id="2_kw17d"]
+
+[resource]
+script = ExtResource("1_7ddwp")
+name = "opossum"
+texture = ExtResource("2_kw17d")
+health = 0
+attack = 0
+defense = 0
+speed = 0
+type = Array[int]([])
+metadata/_custom_type_script = "uid://3vgnfkimbqxn"

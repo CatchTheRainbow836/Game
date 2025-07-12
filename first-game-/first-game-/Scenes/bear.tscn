@@ -1,0 +1,107 @@
+[gd_scene load_steps=16 format=3 uid="uid://stv4s028nvi"]
+
+[ext_resource type="Script" uid="uid://brtriqlvhiht0" path="res://Scenes/bear_enemy_enemy_give.gd" id="1_2imu7"]
+[ext_resource type="Script" uid="uid://bjm0cgaiohatu" path="res://Scripts/enemy.gd" id="1_qpjwo"]
+[ext_resource type="Script" uid="uid://bnk3skxprgjkj" path="res://Scenes/statslabel.gd" id="2_4or10"]
+[ext_resource type="Resource" uid="uid://bx5t6ffjjfgl1" path="res://Inventory/Items/bear.tres" id="2_elcei"]
+[ext_resource type="Texture2D" uid="uid://cgoyeyd8mub1q" path="res://Assets/Enemies and NPC/bear/bear-sheet.png" id="3_elcei"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mlyxe"]
+size = Vector2(52, 61)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u1wsf"]
+atlas = ExtResource("3_elcei")
+region = Rect2(0, 0, 54, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w5s2j"]
+atlas = ExtResource("3_elcei")
+region = Rect2(54, 0, 54, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0l10k"]
+atlas = ExtResource("3_elcei")
+region = Rect2(108, 0, 54, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_txrf0"]
+atlas = ExtResource("3_elcei")
+region = Rect2(54, 0, 54, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_umt5h"]
+atlas = ExtResource("3_elcei")
+region = Rect2(0, 0, 54, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iwwop"]
+atlas = ExtResource("3_elcei")
+region = Rect2(54, 0, 54, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1n3x6"]
+atlas = ExtResource("3_elcei")
+region = Rect2(108, 0, 54, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f23w8"]
+atlas = ExtResource("3_elcei")
+region = Rect2(54, 0, 54, 63)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1e87v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u1wsf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w5s2j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0l10k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_txrf0")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_umt5h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iwwop")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1n3x6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f23w8")
+}],
+"loop": true,
+"name": &"run",
+"speed": 3.0
+}]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(0, -31)
+script = ExtResource("1_2imu7")
+item = ExtResource("2_elcei")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, -31)
+script = ExtResource("1_qpjwo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_mlyxe")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -31)
+sprite_frames = SubResource("SpriteFrames_1e87v")
+animation = &"idle"
+frame = 1
+frame_progress = 0.173627
+flip_h = true
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("2_4or10")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

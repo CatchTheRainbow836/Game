@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://dpd0k6nm8rcyr"]
+
+[ext_resource type="Script" uid="uid://3vgnfkimbqxn" path="res://Inventory/inventory_item.gd" id="1_pts81"]
+[ext_resource type="Texture2D" uid="uid://bqcaxx0vkr4fo" path="res://Assets/Enemies and NPC/Vulture/Sprites/Vulture/vulture2.png" id="2_llrlx"]
+
+[resource]
+script = ExtResource("1_pts81")
+name = "vulture"
+texture = ExtResource("2_llrlx")
+health = 0
+attack = 0
+defense = 0
+speed = 0
+type = Array[int]([])
+metadata/_custom_type_script = "uid://3vgnfkimbqxn"

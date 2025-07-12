@@ -1,0 +1,72 @@
+[gd_scene load_steps=7 format=3 uid="uid://obcgto5vr870"]
+
+[ext_resource type="Script" uid="uid://cn8svqewatyey" path="res://mainscene.gd" id="1_n6dn0"]
+[ext_resource type="PackedScene" uid="uid://dqekveeo68gdq" path="res://Scripts/character_body_2d.tscn" id="1_ushg8"]
+[ext_resource type="PackedScene" uid="uid://svgdnywn21oy" path="res://guide.tscn" id="3_bfkdv"]
+[ext_resource type="PackedScene" uid="uid://cm1p71vmap2th" path="res://tiles.tscn" id="4_bfkdv"]
+[ext_resource type="Script" uid="uid://b035lciq5wlm4" path="res://Team.gd" id="4_lxoac"]
+[ext_resource type="Script" uid="uid://r87pv646we4b" path="res://spawn_node_1.gd" id="5_lxoac"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_n6dn0")
+
+[node name="Node2D" parent="." instance=ExtResource("4_bfkdv")]
+
+[node name="Guide" parent="." instance=ExtResource("3_bfkdv")]
+position = Vector2(-420, -245)
+player_path = NodePath("../CharacterBody2D")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_ushg8")]
+position = Vector2(-448, -214)
+spawnpos1 = Vector2(-700, -200)
+spawnpos2 = Vector2(-450, -200)
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+zoom = Vector2(4, 4)
+position_smoothing_enabled = true
+
+[node name="TeamA" type="Node2D" parent="."]
+position = Vector2(84, -36)
+script = ExtResource("4_lxoac")
+team_id = "A"
+
+[node name="SpawnerA3" type="Node2D" parent="TeamA"]
+position = Vector2(79, 2)
+script = ExtResource("5_lxoac")
+
+[node name="Timer" type="Timer" parent="TeamA/SpawnerA3"]
+
+[node name="SpawnerA2" type="Node2D" parent="TeamA"]
+script = ExtResource("5_lxoac")
+
+[node name="Timer" type="Timer" parent="TeamA/SpawnerA2"]
+
+[node name="SpawnerA1" type="Node2D" parent="TeamA"]
+position = Vector2(-84, 3)
+script = ExtResource("5_lxoac")
+
+[node name="Timer" type="Timer" parent="TeamA/SpawnerA1"]
+one_shot = true
+
+[node name="Label" type="Label" parent="TeamA/SpawnerA1"]
+offset_left = -58.0
+offset_top = -100.0
+offset_right = 84.0
+offset_bottom = -77.0
+text = "SPAWNER ACTUAL"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="."]
+offset_left = -11.0
+offset_top = -18.0
+offset_right = 29.0
+offset_bottom = 5.0
+text = "0,0"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 40.0
+offset_top = -50.0
+offset_right = 125.0
+offset_bottom = -27.0
+text = "SPAWNERS"

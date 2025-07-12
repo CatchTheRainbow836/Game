@@ -1,0 +1,93 @@
+[gd_scene load_steps=14 format=3 uid="uid://rv803so8xbaj"]
+
+[ext_resource type="Script" uid="uid://bjm0cgaiohatu" path="res://Scripts/enemy.gd" id="1_jckqh"]
+[ext_resource type="Script" uid="uid://gaco7e8sap7i" path="res://Scenes/bat_enemy_enemy_give.gd" id="1_mqh3e"]
+[ext_resource type="Script" uid="uid://bnk3skxprgjkj" path="res://Scenes/statslabel.gd" id="2_wt6c1"]
+[ext_resource type="Resource" uid="uid://cf4q5v7j3yd21" path="res://Inventory/Items/bat.tres" id="2_y36tb"]
+[ext_resource type="Texture2D" uid="uid://dnj33yl3uivfs" path="res://Assets/Enemies and NPC/bat/bat-sheet.png" id="4_cawgt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fk7gk"]
+size = Vector2(46, 51.375)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c4xfn"]
+atlas = ExtResource("4_cawgt")
+region = Rect2(53, 0, 53, 57)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h8o1q"]
+atlas = ExtResource("4_cawgt")
+region = Rect2(106, 0, 53, 57)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2fv5y"]
+atlas = ExtResource("4_cawgt")
+region = Rect2(0, 0, 53, 57)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oyxrr"]
+atlas = ExtResource("4_cawgt")
+region = Rect2(53, 0, 53, 57)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vophv"]
+atlas = ExtResource("4_cawgt")
+region = Rect2(106, 0, 53, 57)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2o1ra"]
+atlas = ExtResource("4_cawgt")
+region = Rect2(53, 0, 53, 57)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rk6bm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c4xfn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h8o1q")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2fv5y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oyxrr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vophv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2o1ra")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(0, -28)
+script = ExtResource("1_mqh3e")
+item = ExtResource("2_y36tb")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, -29)
+script = ExtResource("1_jckqh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1, 2.6875)
+shape = SubResource("RectangleShape2D_fk7gk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -29)
+sprite_frames = SubResource("SpriteFrames_rk6bm")
+animation = &"run"
+frame = 2
+frame_progress = 0.364225
+flip_h = true
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("2_wt6c1")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

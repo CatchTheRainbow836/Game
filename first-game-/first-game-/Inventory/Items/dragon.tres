@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://b1qlu0xgbjg1y"]
+
+[ext_resource type="Script" uid="uid://3vgnfkimbqxn" path="res://Inventory/inventory_item.gd" id="1_cbk67"]
+[ext_resource type="Texture2D" uid="uid://c4g6g2cy3bgw7" path="res://Assets/Enemies and NPC/sunny-dragon/sprites/_0000_Layer-1.png" id="2_cbk67"]
+
+[resource]
+script = ExtResource("1_cbk67")
+name = "dragon"
+texture = ExtResource("2_cbk67")
+health = 0
+attack = 0
+defense = 0
+speed = 0
+type = Array[int]([])
+metadata/_custom_type_script = "uid://3vgnfkimbqxn"

@@ -1,0 +1,133 @@
+[gd_scene load_steps=20 format=3 uid="uid://ydkc4hopt5ay"]
+
+[ext_resource type="Script" uid="uid://bjm0cgaiohatu" path="res://Scripts/enemy.gd" id="1_e3r4w"]
+[ext_resource type="Script" uid="uid://sfx0ckhs0wf" path="res://Scenes/ghost_enemy_enemy_give.gd" id="1_taxxh"]
+[ext_resource type="Script" uid="uid://bnk3skxprgjkj" path="res://Scenes/statslabel.gd" id="2_108wt"]
+[ext_resource type="Resource" uid="uid://cq48lt87kxoh6" path="res://Inventory/Items/ghost.tres" id="2_thbej"]
+[ext_resource type="Texture2D" uid="uid://cadepk6b87m48" path="res://Assets/Enemies and NPC/enemy-ghost/Spritesheets/transparent-particles.png" id="4_uta0k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_st3at"]
+size = Vector2(52, 59)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_taxxh"]
+atlas = ExtResource("4_uta0k")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_thbej"]
+atlas = ExtResource("4_uta0k")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uta0k"]
+atlas = ExtResource("4_uta0k")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_st3at"]
+atlas = ExtResource("4_uta0k")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vvq3t"]
+atlas = ExtResource("4_uta0k")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jugkf"]
+atlas = ExtResource("4_uta0k")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7hbae"]
+atlas = ExtResource("4_uta0k")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xoekh"]
+atlas = ExtResource("4_uta0k")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vdkt2"]
+atlas = ExtResource("4_uta0k")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_prwv0"]
+atlas = ExtResource("4_uta0k")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ax0xk"]
+atlas = ExtResource("4_uta0k")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pe55a"]
+atlas = ExtResource("4_uta0k")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vvq3t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_taxxh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_thbej")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uta0k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_st3at")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vvq3t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jugkf")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7hbae")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xoekh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vdkt2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_prwv0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ax0xk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pe55a")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(0, -31)
+script = ExtResource("1_taxxh")
+item = ExtResource("2_thbej")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, -31)
+script = ExtResource("1_e3r4w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1, 1.5)
+shape = SubResource("RectangleShape2D_st3at")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -32)
+sprite_frames = SubResource("SpriteFrames_vvq3t")
+animation = &"idle"
+flip_h = true
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("2_108wt")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

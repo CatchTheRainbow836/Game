@@ -1,0 +1,58 @@
+[gd_scene load_steps=9 format=3 uid="uid://svgdnywn21oy"]
+
+[ext_resource type="Script" uid="uid://dnvx61yav11jb" path="res://guide.gd" id="1_4mqed"]
+[ext_resource type="Texture2D" uid="uid://vxdldj2hu73n" path="res://Assets/Garden Birds_Download/Garden Birds_Download/Spritesheets/spritesheet_magpie.png" id="2_4mqed"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_feuw2"]
+atlas = ExtResource("2_4mqed")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gajip"]
+atlas = ExtResource("2_4mqed")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_83y8a"]
+atlas = ExtResource("2_4mqed")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_utvnm"]
+atlas = ExtResource("2_4mqed")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rn84f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_feuw2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gajip")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_83y8a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_utvnm")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_de3e4"]
+size = Vector2(22, 22)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_4mqed")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_rn84f")
+animation = &"run"
+frame_progress = 0.995578
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_de3e4")
+disabled = true
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
