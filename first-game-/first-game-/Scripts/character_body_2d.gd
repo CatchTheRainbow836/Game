@@ -13,6 +13,11 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @export var inv: Inv = preload("res://Inventory/Items/playerinv.tres")
 
 
+
+
+
+
+
 var spawnnumber = randi() % 2 
 #Random spawning of character
 func _ready() -> void:

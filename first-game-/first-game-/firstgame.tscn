@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://obcgto5vr870"]
+[gd_scene load_steps=10 format=3 uid="uid://obcgto5vr870"]
 
 [ext_resource type="Script" uid="uid://cn8svqewatyey" path="res://mainscene.gd" id="1_n6dn0"]
 [ext_resource type="PackedScene" uid="uid://dqekveeo68gdq" path="res://Scripts/character_body_2d.tscn" id="1_ushg8"]
@@ -6,6 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://cm1p71vmap2th" path="res://tiles.tscn" id="4_bfkdv"]
 [ext_resource type="Script" uid="uid://b035lciq5wlm4" path="res://Team.gd" id="4_lxoac"]
 [ext_resource type="Script" uid="uid://r87pv646we4b" path="res://spawn_node_1.gd" id="5_lxoac"]
+[ext_resource type="PackedScene" uid="uid://bpxb2ldvvf3a7" path="res://inventory_ui.tscn" id="7_3uv8v"]
+[ext_resource type="PackedScene" uid="uid://c26j1dg4l0qfh" path="res://Collectibles/TestCollectible.tscn" id="8_ml3h8"]
+[ext_resource type="PackedScene" uid="uid://vl1sp188vwtr" path="res://Collectibles/TestCollectiblev2.tscn" id="9_npgo8"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_n6dn0")
@@ -70,3 +73,12 @@ offset_top = -50.0
 offset_right = 125.0
 offset_bottom = -27.0
 text = "SPAWNERS"
+
+[node name="InventoryUI" parent="." instance=ExtResource("7_3uv8v")]
+player_path = NodePath("../CharacterBody2D")
+
+[node name="Collectible" parent="." instance=ExtResource("8_ml3h8")]
+position = Vector2(-159, -42)
+
+[node name="Collectible2" parent="." instance=ExtResource("9_npgo8")]
+position = Vector2(-75, -43)

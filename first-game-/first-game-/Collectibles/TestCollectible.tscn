@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://c26j1dg4l0qfh"]
+
+[ext_resource type="Script" uid="uid://bfl41ye63elj8" path="res://Collectible.gd" id="1_xsuy0"]
+[ext_resource type="Resource" uid="uid://njxnhqum550u" path="res://Collectibles/TestCollectible.tres" id="2_xd61m"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nesu4"]
+
+[node name="Collectible" type="Node2D"]
+script = ExtResource("1_xsuy0")
+lore_item = ExtResource("2_xd61m")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_nesu4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="InteractionPrompt" type="Label" parent="."]
+offset_left = -20.0
+offset_top = -42.0
+offset_right = 20.0
+offset_bottom = -19.0
+text = "Press Z to pick up"
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_detection_area_body_exited"]

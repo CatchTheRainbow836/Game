@@ -9,6 +9,7 @@ func _ready() -> void:
 	print("Spawner's location in editor", $Label2.position)
 	print("World Root: ", get_tree().get_current_scene().name)
 	_check_all_enemy_scenes()
+	
 
 
 func _check_all_enemy_scenes():

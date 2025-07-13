@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="LoreItem" load_steps=3 format=3 uid="uid://njxnhqum550u"]
+
+[ext_resource type="Script" uid="uid://cor0pcqmqw3vs" path="res://LoreItem.gd" id="1_cj808"]
+[ext_resource type="Texture2D" uid="uid://qpo8rnuubx" path="res://Assets/bunny2.png" id="2_sd7ai"]
+
+[resource]
+script = ExtResource("1_cj808")
+title = "Test"
+texture = ExtResource("2_sd7ai")
+lore_text = "This is a test
+to see
+if
+this works <3"
+unlock_condition = ""
+metadata/_custom_type_script = "uid://cor0pcqmqw3vs"

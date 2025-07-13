@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="LoreItem" load_steps=3 format=3 uid="uid://cb3g62xyitmpm"]
+
+[ext_resource type="Script" uid="uid://cor0pcqmqw3vs" path="res://LoreItem.gd" id="1_ikiv6"]
+[ext_resource type="Texture2D" uid="uid://dxnnxudiebiuv" path="res://Assets/bettle3.png" id="2_2wru3"]
+
+[resource]
+script = ExtResource("1_ikiv6")
+title = "TestCollectiblev2"
+texture = ExtResource("2_2wru3")
+lore_text = "This is another test to see what would happen if we didn't put multiple lines, just one giant blob of text"
+unlock_condition = ""
+metadata/_custom_type_script = "uid://cor0pcqmqw3vs"

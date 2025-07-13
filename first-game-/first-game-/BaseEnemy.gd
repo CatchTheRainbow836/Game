@@ -120,7 +120,7 @@ func _randomize_stats(ui: InvItem) -> void:
 
 func _drop_loot() -> void:
 	#change this later
-	if randi() % 10 == 0:
+	if randi() % 30 == 0:
 		var u = _give_unique_item()
 		player.collect(u)
 

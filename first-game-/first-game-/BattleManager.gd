@@ -8,6 +8,25 @@ var player: CharacterBody2D
 var party: Array[InvItem] = []
 var engaged_enemies: Array = []
 var enemy_data_list: Array = []
+
+var collected_lore: Array[LoreItem] = []
+var conditions_met: Array[String] = []
+func collect_lore(item: LoreItem):
+	if !collected_lore.has(item):
+		collected_lore.append(item)
+		show_collection_message(item.title)
+		print("Collected lore:", item.title)
+func show_collection_message(title: String):
+	#Implement notif later
+	pass
+func complete_condition(condition_id: String):
+	if !conditions_met.has(condition_id):
+		conditions_met.append(condition_id)
+func check_condition(condition_id: String) -> bool:
+	return conditions_met.has(condition_id)
+
+
+
 func _unhandled_input(ev):
 	if ev.is_action_pressed("battle_win"):
 		_give_random_enemy_item()

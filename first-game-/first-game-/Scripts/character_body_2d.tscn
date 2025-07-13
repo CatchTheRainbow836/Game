@@ -1,10 +1,9 @@
-[gd_scene load_steps=26 format=3 uid="uid://dqekveeo68gdq"]
+[gd_scene load_steps=25 format=3 uid="uid://dqekveeo68gdq"]
 
 [ext_resource type="Script" uid="uid://dw0gobm2mcauu" path="res://Scripts/character_body_2d.gd" id="1_gbyq6"]
 [ext_resource type="Texture2D" uid="uid://b0jcu7fi31yq1" path="res://Assets/B_witch_idle.png" id="1_ymxaj"]
 [ext_resource type="Texture2D" uid="uid://bprg6wnxlos1c" path="res://Assets/B_witch_attack.png" id="3_pbq55"]
 [ext_resource type="Texture2D" uid="uid://b8h6mde2gftqq" path="res://Assets/B_witch_run.png" id="4_t38ji"]
-[ext_resource type="PackedScene" uid="uid://u0xxg0d3v31o" path="res://Inventory/inv_ui.tscn" id="6_t38ji"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_88kja"]
 atlas = ExtResource("1_ymxaj")
@@ -166,12 +165,6 @@ script = ExtResource("1_gbyq6")
 sprite_frames = SubResource("SpriteFrames_fxof2")
 animation = &"run"
 autoplay = "idle"
-
-[node name="Inv_UI" parent="." instance=ExtResource("6_t38ji")]
-offset_left = -93.0
-offset_top = -46.0
-offset_right = -9.0
-offset_bottom = 16.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -1)
